@@ -123,9 +123,8 @@ public class LocationSettings extends SettingsPreferenceFragment
                     updateLocationToggles();
                 }
             };
+            mContentQueryMap.addObserver(mSettingsObserver);
         }
-
-        mContentQueryMap.addObserver(mSettingsObserver);
     }
 
     @Override

@@ -1645,6 +1645,10 @@
     <string name="summary_font_size" translatable="false">%1$s</string>
     <!-- [CHAR LIMIT=40] Sound & display settings screen, title of dialog for picking font size -->
     <string name="dialog_title_font_size">Font size</string>
+    <!-- Sound & display settings screen, setting option name to change whether navigation bar is shown -->
+    <string name="navigation_bar_title">Navigation bar</string>
+    <!-- Sound & display settings screen, setting option summary to change whether navigation bar is shown -->
+    <string name="navigation_bar_summary">Show or hide virtual soft keys</string>
 
     <!-- SIM lock settings title -->
     <string name="sim_lock_settings">SIM card lock settings</string>
@@ -1697,11 +1701,6 @@
     <!-- Advanced (used for diagnostics) device info activity title -->
     <string name="device_info_settings" product="default">Phone status</string>
 
-    <!-- About phone screen, list item title.  Takes the user to the screen for seeing and installing system updates. -->
-    <string name="system_update_settings_list_item_title">System updates</string>
-    <!-- About phone screen, list item summary.  Takes the user to the screen for seeing and installing system updates. -->
-    <string name="system_update_settings_list_item_summary">""</string>
-
     <!-- About phone screen, status item label -->
     <string name="firmware_version">Android version</string>
     <!-- About phone screen, status item label-->
@@ -1712,7 +1711,13 @@
     <string name="kernel_version">Kernel version</string>
     <!-- About phone screen,  setting option name-->
     <string name="build_number">Build number</string>
+    <!-- About phone screen,  setting option name-->
+    <string name="mod_version">Mod version</string>
+    <string name="mod_version_default">Unknown</string>
 
+    <!-- About phone screen, build date of ROM -->
+    <string name="build_date">Build date</string>
+    <string name="build_date_default">2012-01-01-0000</string>
     <!-- About phone screen, show when a value of some status item is unavailable. -->
     <string name="device_info_not_available">Not available</string>
     <!-- About phone screen, phone status screen title -->
@@ -2685,9 +2690,14 @@ found in the list of installed apps.</string>
     <!-- Development Settings summary.  The summary of the item to take the user to Development settings.  Development settings are settings meant for application developers. -->
     <string name="development_settings_summary">Set options for app development</string>
     <!-- Setting checkbox title for Whether to enable USB debugging support on the phone. -->
-    <string name="enable_adb">USB debugging</string>
+    <string name="enable_adb">Android debugging</string>
     <!-- Setting checkbox summary for Whether to enable USB debugging support on the phone -->
-    <string name="enable_adb_summary">Debug mode when USB is connected</string>
+    <string name="enable_adb_summary">Allow Android debug mode, the adb interface on USB (or on network)</string>
+    <!-- Setting checkbox title for Whether debugging should run over TCP/IP. -->
+    <string name="adb_over_network">ADB over Network</string>
+    <string name="adb_over_network_summary">Enable TCP/IP debugging over Network interfaces (Wi-Fi, Usb networks). This setting is reset on reboot</string>
+    <!-- Warning for Adb over Network -->
+    <string name="adb_over_network_warning">WARNING: When ADB over Network is enabled, your phone is open for intrusions on all connected networks, including GSM data network !\n\nOnly use this feature when you are connected on trusted networks.\n\nDo you really want to enable this function?</string>
     <!-- Development settings: title for the field that shows the "App ID" development identifier
          for this device. [CHAR LIMIT=40] -->
     <string name="verifier_device_identifier">Development device ID</string>
@@ -3520,6 +3530,12 @@ found in the list of installed apps.</string>
     <string name="show_all_anrs_summary">Show App Not Responding dialog
         for background apps</string>
 
+    <!-- UI debug setting: kill app long-press back [CHAR LIMIT=25] -->
+    <string name="kill_app_longpress_back">Kill app back button</string>
+    <!-- UI debug settting: kill app long-press back [CHAR LIMIT=50] -->
+    <string name="kill_app_longpress_back_summary">Kill the foreground app by long-pressing
+            the back key</string>
+
     <!-- Activity title for network data usage summary. [CHAR LIMIT=25] -->
     <string name="data_usage_summary_title">Data usage</string>
     <!-- Title for option to pick visible time range from a list available usage periods. [CHAR LIMIT=25] -->
@@ -3774,10 +3790,5 @@ found in the list of installed apps.</string>
 
     <!-- Representation of a numerical percentage. [CHAR LIMIT=8] -->
     <string name="percentage"><xliff:g id="number" example="30">%d</xliff:g>%%</string>
-
-    <!-- A menu item in "About phone" that allows the user to update the phone with settings
-    from their cell phone carrier. The use of the string is similar to the string
-    "system_update_settings_list_item_title" in this project. [CHAR LIMIT=25] -->
-    <string name="additional_system_update_settings_list_item_title">Additional system updates</string>
 
 </resources>

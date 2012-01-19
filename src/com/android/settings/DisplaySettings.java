@@ -52,10 +52,12 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_ACCELEROMETER = "accelerometer";
     private static final String KEY_FONT_SIZE = "font_size";
     private static final String KEY_NOTIFICATION_PULSE = "notification_pulse";
+    private static final String KEY_NAVIGATION_BAR = "navigation_bar";
 
     private CheckBoxPreference mAccelerometer;
     private ListPreference mFontSizePref;
     private CheckBoxPreference mNotificationPulse;
+    private CheckBoxPreference mNavigationBar;
 
     private final Configuration mCurConfig = new Configuration();
     
@@ -88,6 +90,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
         mFontSizePref = (ListPreference) findPreference(KEY_FONT_SIZE);
         mFontSizePref.setOnPreferenceChangeListener(this);
+
         mNotificationPulse = (CheckBoxPreference) findPreference(KEY_NOTIFICATION_PULSE);
         if (mNotificationPulse != null
                 && getResources().getBoolean(
@@ -102,6 +105,18 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 Log.e(TAG, Settings.System.NOTIFICATION_LIGHT_PULSE + " not found");
             }
         }
+        // Toggle for navigation bar; only show if the nav bar is not necessary for device usage,
+        // otherwise user could get stuck without nav bar
+        mNavigationBar = (CheckBoxPreference) findPreference(KEY_NAVIGATION_BAR);
+        if(getResources().getBoolean(
+            com.android.internal.R.bool.config_showNavigationBar) == true) {
+                getPreferenceScreen().removePreference(mNavigationBar);
+        } else {
+            mNavigationBar.setChecked(Settings.System.getInt(resolver,
+                Settings.System.NAVIGATION_BAR_VISIBLE, 0) == 1);
+            mNavigationBar.setOnPreferenceChangeListener(this);
+        }
+
     }
 
     private void updateTimeoutPreferenceDescription(long currentTimeout) {
@@ -249,6 +264,12 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             Settings.System.putInt(getContentResolver(), Settings.System.NOTIFICATION_LIGHT_PULSE,
                     value ? 1 : 0);
             return true;
+        } else if (preference == mNavigationBar) {
+            boolean value = mNavigationBar.isChecked();
+            Settings.System.putInt(getContentResolver(), Settings.System.NAVIGATION_BAR_VISIBLE,
+                    value ? 1 : 0);
+            return true;
+
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
