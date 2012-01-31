@@ -1549,6 +1549,8 @@
     <string name="volume_ring_description">Ringtone &amp; notifications</string>
     <!-- Volume description for linking ringtone and notification volume -->
     <string name="link_volume_ringtones">Link volumes</string>
+    <!-- Volume description for linking ringtone and notification mute states -->
+    <string name="link_volume_mutes">Link mute states</string>
     <!-- Volume description for ringtone volume -->
     <string name="volume_ring_only_description">Ringtones</string>
     <!-- Volume description for notification volume -->
