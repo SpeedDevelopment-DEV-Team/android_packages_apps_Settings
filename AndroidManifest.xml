@@ -1353,7 +1353,7 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <action android:name="android.app.action.START_ENCRYPTION" />
-                <category android:name="android.intent.category.DEFAULT" /> />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
             <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
                 android:value="com.android.settings.CryptKeeperSettings" />
@@ -1373,6 +1373,13 @@
                 android:value="com.android.settings.DataUsageSummary" />
             <meta-data android:name="com.android.settings.TOP_LEVEL_HEADER_ID"
                 android:resource="@id/wireless_settings" />
+        </activity>
+
+        <activity android:name="com.liquid.control.LiquidActivity" android:label="@string/liquid_control_title">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
 
         <receiver android:name=".widget.SettingsAppWidgetProvider"
