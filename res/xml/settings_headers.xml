@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Copyright (C) 2010 The Android Open Source Project
+<!-- Copyright (C) 2012 The Android Open Source Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -16,13 +16,6 @@
 
 <preference-headers
         xmlns:android="http://schemas.android.com/apk/res/android">
-
-    <!-- Liquid Control -->
-    <header
-        android:id="@+id/liquid_control"
-        android:fragment="com.liquid.control.LiquidActivity"
-        android:title="@string/liquid_control_title"
-        android:icon="@drawable/ic_settings_liquid" />
 
     <!-- WIRELESS and NETWORKS -->
     <header android:title="@string/header_category_wireless_networks" />
@@ -53,6 +46,18 @@
         android:fragment="com.android.settings.WirelessSettings"
         android:id="@+id/operator_settings">
         <intent android:action="com.android.settings.OPERATOR_APPLICATION_SETTING" />
+    </header>
+
+    <!-- SHORTCUTS -->
+    <header android:title="@string/header_category_shortcuts" />
+
+    <!-- Liquid Control -->
+    <header android:icon="@drawable/ic_settings_liquid"
+            android:title="@string/liquid_control_title">
+        <intent
+                android:action="android.intent.action.MAIN"
+                android:targetClass="com.liquid.control.LiquidActivity"
+                android:targetPackage="com.liquid.control" />
     </header>
 
     <!-- Other wireless and network controls -->

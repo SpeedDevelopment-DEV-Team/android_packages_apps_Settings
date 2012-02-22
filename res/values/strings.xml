@@ -25,6 +25,8 @@
     <string name="device_info_default">Unknown</string>
 
     <!-- Category headings in left-pane header menu --> <skip />
+    <!-- Settings main menu category heading. Shortcuts [CHAR LIMIT=40] -->
+    <string name="header_category_shortcuts">SHORTCUTS</string>
     <!-- Settings main menu category heading. Wireless and networks (Wi-Fi, Bluetooth, data usage...). [CHAR LIMIT=40] -->
     <string name="header_category_wireless_networks">WIRELESS &amp; NETWORKS</string>
     <!-- Settings main menu category heading. Device (Sound, display, battery, applications...). [CHAR LIMIT=40] -->
