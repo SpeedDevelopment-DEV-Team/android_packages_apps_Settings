@@ -17,11 +17,12 @@
 <preference-headers
         xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <!-- Liquid Control access -->
-    <header android:title="@string/liquid_control_title"
+    <!-- Liquid Control -->
+    <header
         android:id="@+id/liquid_control"
         android:fragment="com.liquid.control.LiquidActivity"
-        android:icon="@drawable/ic_liquid" />
+        android:title="@string/liquid_control_title"
+        android:icon="@drawable/ic_settings_liquid" />
 
     <!-- WIRELESS and NETWORKS -->
     <header android:title="@string/header_category_wireless_networks" />

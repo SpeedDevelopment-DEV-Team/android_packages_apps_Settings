@@ -3798,6 +3798,6 @@ found in the list of installed apps.</string>
     <string name="percentage"><xliff:g id="number" example="30">%d</xliff:g>%%</string>
 
     <!--********************START LIQUID MODS************************************************-->
-    <string name="liquid_control_title">LiquidControl</string>
+    <string name="liquid_control_title">Liquid Control</string>
 
 </resources>
