@@ -333,6 +333,57 @@
     <!-- Bluetooth connection permission Alert Activity text [CHAR LIMIT=none]-->
     <string name="bluetooth_connection_dialog_text">"Do you want to connect to \u0022<xliff:g id="device_name">%1$s</xliff:g>\u0022?"</string>
 
+    <!-- Display settings --><skip/>
+    <!-- Sound & display settings screen, section header for settings related to display -->
+    <string name="display_settings">Display</string>
+    <!-- Sound & display settings screen, accelerometer-based rotation check box label -->
+    <string name="accelerometer_title">Auto-rotate screen</string>
+    <!-- Sound & display settings screen, accelerometer-based rotation summary text when check box is selected -->
+    <string name="accelerometer_summary_on" product="tablet">Switch orientation automatically when rotating tablet</string>
+    <!-- Sound & display settings screen, accelerometer-based rotation summary text when check box is selected -->
+    <string name="accelerometer_summary_on" product="default">Switch orientation automatically when rotating phone</string>
+    <!-- Sound & display settings screen, accelerometer-based rotation summary text when check box is clear -->
+    <string name="accelerometer_summary_off" product="tablet">Switch orientation automatically when rotating tablet</string>
+    <!-- Sound & display settings screen, accelerometer-based rotation summary text when check box is clear -->
+    <string name="accelerometer_summary_off" product="default">Switch orientation automatically when rotating phone</string>
+    <!-- Sound & display settings screen, setting option name to change brightness -->
+    <string name="brightness">Brightness</string>
+    <!-- Sound & display settings screen, setting option summary to change brightness -->
+    <string name="brightness_summary">Adjust the brightness of the screen</string>
+    <!-- Sound & display settings screen, setting option name to change screen timeout -->
+    <string name="screen_timeout">Sleep</string>
+    <!-- Sound & display settings screen, setting option summary to change screen timeout -->
+    <string name="screen_timeout_summary">After <xliff:g id="timeout_description">%1$s</xliff:g> of inactivity</string>
+    <!-- Display settings screen, trigger for screen saver options -->
+    <string name="screensaver_settings_title">Screen Candy</string>
+    <!-- Display settings screen, summary for screen saver options, screen saver is turned on -->
+    <string name="screensaver_settings_summary_on">Will start upon sleep if connected to power</string>
+    <!-- Display settings screen, summary for screen saver options, screen saver is turned off -->
+    <string name="screensaver_settings_summary_off">Disabled</string>
+    <!-- Screen saver settings, setting option name to select a module -->
+    <string name="screensaver_component_title">Selected candy</string>
+    <!-- Screen saver settings, setting option name to change activation timeout -->
+    <string name="screensaver_timeout_title">When to activate</string>
+    <!-- Screen saver settings, setting option summary to change activation timeout -->
+    <string name="screensaver_timeout_summary">After <xliff:g id="timeout_description">%1$s</xliff:g> spent idle</string>
+    <!-- Screen saver settings, setting option summary to change activation timeout, shown when disabled -->
+    <string name="screensaver_timeout_zero_summary">Never</string>
+    <!-- Screen saver settings, button allowing the user to test/try the current module -->
+    <string name="screensaver_test">Try it!</string>
+    <!-- Screen saver settings, checkbox allowing the screen saver to activate automatically when
+         the device is docked -->
+    <string name="screensaver_activate_on_dock_title">Also start when docked</string>
+    <!-- Sound & display settings screen, setting option name to change whether the screen adjusts automatically based on lighting conditions -->
+    <string name="automatic_brightness">Automatic brightness</string>
+    <!-- [CHAR LIMIT=30] Sound & display settings screen, setting option name to change font size -->
+    <string name="title_font_size">Font size</string>
+    <!-- Sound & display settings screen, setting option summary displaying the currently selected font size -->
+    <string name="summary_font_size" translatable="false">%1$s</string>
+    <!-- [CHAR LIMIT=40] Sound & display settings screen, title of dialog for picking font size -->
+    <string name="dialog_title_font_size">Font size</string>
+    <!-- Display settings screen, battery light repeat pulsing title -->
+    <string name="battery_pulse_title">Pulse low battery light</string>
+
     <!-- Activity label of BluetoothPbPermissionActivity, also used as Strings in the permission dialog [CHAR LIMIT=none] -->
     <string name="bluetooth_phonebook_request">"Phone book request"</string>
 
