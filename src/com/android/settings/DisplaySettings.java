@@ -132,12 +132,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                 mBatteryPulse.setOnPreferenceChangeListener(this);
             }
         }
-
-        mVolumeWake = (CheckBoxPreference) findPreference(KEY_VOLUME_WAKE);
-        if (mVolumeWake != null) {
-            mVolumeWake.setChecked(Settings.System.getInt(resolver,
-                    Settings.System.VOLUME_WAKE_SCREEN, 0) == 1);
-        }
     }
 
     private void updateTimeoutPreferenceDescription(long currentTimeout) {
@@ -293,10 +287,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             boolean value = mBatteryPulse.isChecked();
             Settings.System.putInt(getContentResolver(), Settings.System.BATTERY_LIGHT_PULSE,
                     value ? 1 : 0);
-            return true;
-        } else if (preference == mVolumeWake) {
-            Settings.System.putInt(getContentResolver(), Settings.System.VOLUME_WAKE_SCREEN,
-                    mVolumeWake.isChecked() ? 1 : 0);
             return true;
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
