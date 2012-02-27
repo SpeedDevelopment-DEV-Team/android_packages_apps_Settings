@@ -119,6 +119,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             mNavigationBar.setChecked(Settings.System.getInt(resolver,
                 Settings.System.NAVIGATION_BAR_VISIBLE, 0) == 1);
             mNavigationBar.setOnPreferenceChangeListener(this);
+        }
 
         mBatteryPulse = (CheckBoxPreference) findPreference(KEY_BATTERY_PULSE);
         if (mBatteryPulse != null) {
@@ -137,7 +138,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             mVolumeWake.setChecked(Settings.System.getInt(resolver,
                     Settings.System.VOLUME_WAKE_SCREEN, 0) == 1);
         }
-
     }
 
     private void updateTimeoutPreferenceDescription(long currentTimeout) {
