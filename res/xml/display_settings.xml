@@ -58,10 +58,6 @@
             android:title="@string/battery_pulse_title"
             android:persistent="false" />
 
-        <PreferenceCategory
-            android:key="category_wakeup_options"
-            android:title="@string/display_category_wakeup_options_title"/>
-
         <CheckBoxPreference
             android:key="navigation_bar"
             android:title="@string/navigation_bar_title"
