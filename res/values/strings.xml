@@ -343,7 +343,7 @@
     <string name="profiles_settings_title">Profiles</string>
     <string name="profiles_general_title">General</string>
 
-    <!-- Profiles - Quiet hours -->
+    <!-- Quiet hours -->
     <string name="quiet_hours_title">Quiet hours</string>
     <string name="quiet_hours_summary">View or change the hours the device should be quiet</string>
     <string name="quiet_hours_note_title">Note</string>
@@ -367,6 +367,230 @@
     <string name="quiet_hours_haptic">Disable haptic feedback</string>
     <string name="quiet_hours_haptic_on">Haptic feedback will be disabled</string>
     <string name="quiet_hours_haptic_off">Haptic feedback will function as normal</string>
+
+    <!-- Display settings --><skip/>
+    <!-- Sound & display settings screen, section header for settings related to display -->
+    <string name="display_settings">Display</string>
+    <!-- Sound & display settings screen, accelerometer-based rotation check box label -->
+    <string name="accelerometer_title">Auto-rotate screen</string>
+    <!-- Sound & display settings screen, accelerometer-based rotation summary text when check box is selected -->
+    <string name="accelerometer_summary_on" product="tablet">Switch orientation automatically when rotating tablet</string>
+    <!-- Sound & display settings screen, accelerometer-based rotation summary text when check box is selected -->
+    <string name="accelerometer_summary_on" product="default">Switch orientation automatically when rotating phone</string>
+    <!-- Sound & display settings screen, accelerometer-based rotation summary text when check box is clear -->
+    <string name="accelerometer_summary_off" product="tablet">Switch orientation automatically when rotating tablet</string>
+    <!-- Sound & display settings screen, accelerometer-based rotation summary text when check box is clear -->
+    <string name="accelerometer_summary_off" product="default">Switch orientation automatically when rotating phone</string>
+    <!-- Sound & display settings screen, setting option name to change brightness -->
+    <string name="brightness">Brightness</string>
+    <!-- Sound & display settings screen, setting option summary to change brightness -->
+    <string name="brightness_summary">Adjust the brightness of the screen</string>
+    <!-- Sound & display settings screen, setting option name to change screen timeout -->
+    <string name="screen_timeout">Sleep</string>
+    <!-- Sound & display settings screen, setting option summary to change screen timeout -->
+    <string name="screen_timeout_summary">After <xliff:g id="timeout_description">%1$s</xliff:g> of inactivity</string>
+    <!-- Display settings screen, trigger for screen saver options -->
+    <string name="screensaver_settings_title">Screen Candy</string>
+    <!-- Display settings screen, summary for screen saver options, screen saver is turned on -->
+    <string name="screensaver_settings_summary_on">Will start upon sleep if connected to power</string>
+    <!-- Display settings screen, summary for screen saver options, screen saver is turned off -->
+    <string name="screensaver_settings_summary_off">Disabled</string>
+    <!-- Screen saver settings, setting option name to select a module -->
+    <string name="screensaver_component_title">Selected candy</string>
+    <!-- Screen saver settings, setting option name to change activation timeout -->
+    <string name="screensaver_timeout_title">When to activate</string>
+    <!-- Screen saver settings, setting option summary to change activation timeout -->
+    <string name="screensaver_timeout_summary">After <xliff:g id="timeout_description">%1$s</xliff:g> spent idle</string>
+    <!-- Screen saver settings, setting option summary to change activation timeout, shown when disabled -->
+    <string name="screensaver_timeout_zero_summary">Never</string>
+    <!-- Screen saver settings, button allowing the user to test/try the current module -->
+    <string name="screensaver_test">Try it!</string>
+    <!-- Screen saver settings, checkbox allowing the screen saver to activate automatically when
+         the device is docked -->
+    <string name="screensaver_activate_on_dock_title">Also start when docked</string>
+    <!-- Sound & display settings screen, setting option name to change whether the screen adjusts automatically based on lighting conditions -->
+    <string name="automatic_brightness">Automatic brightness</string>
+    <!-- [CHAR LIMIT=30] Sound & display settings screen, setting option name to change font size -->
+    <string name="title_font_size">Font size</string>
+    <!-- Sound & display settings screen, setting option summary displaying the currently selected font size -->
+    <string name="summary_font_size" translatable="false">%1$s</string>
+    <!-- [CHAR LIMIT=40] Sound & display settings screen, title of dialog for picking font size -->
+    <string name="dialog_title_font_size">Font size</string>
+    <!-- Display settings screen, battery light repeat pulsing title -->
+    <string name="battery_pulse_title">Pulse low battery light</string>
+
+    <!-- Advanced, Device specific (DeviceParts) settings #CM -->
+    <string name="advanced_settings_title">Advanced</string>
+
+    <!-- Power Widget -->
+    <string name="power_widget_title">Power widget</string>
+    <string name="title_expanded_widget">Show power widget</string>
+    <string name="summary_expanded_widget">Show the power widget in the notification drawer</string>
+    <string name="title_expanded_hide_onchange">Hide on change</string>
+    <string name="summary_expanded_hide_onchange">Hide the notification drawer after toggling a widget button</string>
+    <string name="title_expanded_hide_indicator">Hide indicator</string>
+    <string name="summary_expanded_hide_indicator">Hide the power widget indicators</string>
+    <string name="title_expanded_hide_scrollbar">Hide scrollbar</string>
+    <string name="summary_expanded_hide_scrollbar">Hide the scrollbar when more than the maximum number of widget buttons are present</string>
+    <string name="title_widget_picker">Widget buttons</string>
+    <string name="summary_widget_picker">Select which buttons to display in the power widget</string>
+    <string name="title_widget_order">Widget button order</string>
+    <string name="summary_widget_order">Select the order of the buttons in the power widget</string>
+    <string name="title_buttons">Buttons</string>
+    <string name="title_toggle_wifi">Toggle Wi-Fi</string>
+    <string name="title_toggle_bluetooth">Toggle Bluetooth</string>
+    <string name="title_toggle_gps">Toggle GPS</string>
+    <string name="title_toggle_sound">Toggle Sound</string>
+    <string name="title_toggle_brightness">Toggle Brightness</string>
+    <string name="title_toggle_sync">Toggle Sync</string>
+    <string name="title_toggle_wifiap">Toggle Wi-Fi AP</string>
+    <string name="title_toggle_screentimeout">Toggle Screentimeout</string>
+    <string name="title_toggle_mobiledata">Toggle Mobiledata</string>
+    <string name="title_toggle_lockscreen">Toggle Lockscreen</string>
+    <string name="title_toggle_networkmode">Toggle 2G/3G</string>
+    <string name="title_toggle_autorotate">Toggle Orientation</string>
+    <string name="title_toggle_airplane">Toggle Airplane mode</string>
+    <string name="title_toggle_flashlight">Toggle LED flashlight</string>
+    <string name="title_toggle_sleep">Go to sleep</string>
+    <string name="title_toggle_media_play_pause">Media: Toggle Play/Pause</string>
+    <string name="title_toggle_media_previous">Media: Skip to Previous</string>
+    <string name="title_toggle_media_next">Media: Skip to Next</string>
+    <string name="title_toggle_lte">Toggle LTE</string>
+    <string name="title_toggle_wimax">Toggle WiMAX</string>
+    <string name="title_button_modes">Button modes</string>
+    <string name="pref_brightness_mode_title">Brightness modes</string>
+    <string name="pref_brightness_mode_summary">Choose how the brightness button changes modes</string>
+    <string name="cm_brightness_mode_auto">Auto</string>
+    <string name="cm_brightness_mode_dim">Dim</string>
+    <string name="pref_network_mode_title">Network modes</string>
+    <string name="pref_network_mode_summary">Choose how the NetworkMode button changes modes</string>
+    <string name="pref_screentimeout_mode_title">Screentimeout modes</string>
+    <string name="pref_screentimeout_mode_summary">Choose how the Screentimeout button changes modes</string>
+    <string name="pref_ring_mode_title">Sound modes</string>
+    <string name="pref_ring_mode_summary">Choose how the sound button changes modes</string>
+    <string name="cm_sound_mode_silent">Silent</string>
+    <string name="cm_sound_mode_vibrate">Vibrate</string>
+    <string name="cm_sound_mode_sound">Sound</string>
+    <string name="cm_sound_mode_soundVibrate">Sound+Vibrate</string>
+    <string name="pref_flash_mode_title">Flash mode</string>
+    <string name="pref_flash_mode_summary">Choose High / Death Ray</string>
+
+    <!-- Power Widget -->
+    <string name="expanded_haptic_feedback_title">Haptic feedback</string>
+    <string name="expanded_haptic_feedback_summary">Enable/disable haptic feedback</string>
+
+    <!-- Wallpaper settings title [CHAR LIMIT=30] -->
+    <string name="wallpaper_settings_title">Wallpaper</string>
+    <!-- Wallpaper settings fragment title [CHAR LIMIT=30] -->
+    <string name="wallpaper_settings_fragment_title">Choose wallpaper from</string>
+
+    <!-- Profiles settings -->
+    <string name="profiles_settings_title">Profiles</string>
+    <string name="profiles_general_title">General</string>
+    <string name="profiles_add">Add</string>
+    <string name="profile_menu_delete">Delete</string>
+    <string name="profile_settings_title">Profile</string>
+
+    <!-- Add Profile -->
+    <string name="add_profile_dialog_title">Create new profile</string>
+    <string name="profile_name_title">Profile name</string>
+    <string name="profile_profile_name_prompt">Enter a name for the new profile</string>
+    <string name="menu_new_profile">New profile</string>
+    <string name="menu_new_profile_summary">Add and configure a new profile</string>
+
+    <!-- Rename Profile Dialog  -->
+    <string name="rename_profile_dialog_title">Rename profile</string>
+    <string name="duplicate_profile_name">Duplicate profile name!</string>
+
+    <!-- Message when trying to delete the active profile -->
+    <string name="profile_cannot_delete">You cannot delete the active profile</string>
+
+    <!-- Reset Profiles -->
+    <string name="profile_reset_title">Reset</string>
+    <string name="profile_reset_message">Do you want to delete all user created profiles and application groups and restore them to default?</string>
+
+    <!-- Default name of a new profile: "<new profile>" -->
+    <string name="new_profile_name">&lt;new profile&gt;</string>
+
+    <!-- Profile Config screen PreferenceGroup titles -->
+    <string name="profile_connectionoverrides_title">Connection overrides</string>
+    <string name="profile_connectionoverrides_summary">Touch to set enabled/disabled</string>
+    <string name="profile_volumeoverrides_title">Volume overrides</string>
+    <string name="profile_volumeoverrides_summary">Touch to set volume.</string>
+
+    <!-- Menu item for managing profiles -->
+    <string name="profile_profiles_manage">Profiles</string>
+    <string name="profile_profile_manage">Manage profile</string>
+    <string name="profile_applist_manage">Application list</string>
+    <string name="profile_appgroups_manage">Manage application groups</string>
+    <string name="profile_appgroup_manage">Profile</string>
+
+    <!-- Profile Settings sound mode label -->
+    <string name="sound_mode">Notification mode</string>
+    <string name="ringer_mode">Ring mode</string>
+    <string name="lights_mode">Lights mode</string>
+    <string name="vibrate_mode">Vibrate mode</string>
+    <string name="choose_soundtone">Choose notification tone</string>
+    <string name="choose_ringtone">Choose ringtone</string>
+
+    <!-- Profile settings screen, section header for settings related to notification profiles -->
+    <string name="profile_settings">Profile settings</string>
+    <string name="profile_name">Name</string>
+
+    <!-- Sound settings screen, setting option name to pick ringtone (a list dialog comes up)-->
+    <string name="soundtone_title">Notification tone</string>
+    <string name="soundtone_summary">""</string>
+
+    <!-- Title for application group setting screen -->
+    <string name="profile_appgroup_title">Application group: %s</string>
+    <string name="profile_appgroups_title">Application groups</string>
+    <string name="profile_applist_title">Applications</string>
+    <string name="profile_new_appgroup">New application group</string>
+    <string name="profile_delete_appgroup">Delete this application group</string>
+    <string name="profile_appgroup_name_prompt">Enter a name for the new application group</string>
+    <string name="profile_add_app">Add application</string>
+    <string name="profile_delete_app">Remove application</string>
+
+    <!-- Delete confimation message -->
+    <string name="profile_delete_confirm">Are you sure you want to delete this profile?</string>
+    <string name="profile_app_delete_confirm">Are you sure you want to remove this application?</string>
+
+    <!-- Add application dialog box title -->
+    <string name="profile_choose_app">Choose application</string>
+    <string name="profile_settings_header">Profile settings</string>
+
+    <string name="possibleButtons">Possible Buttons</string>
+    <string name="toggleWifi">Wi-Fi</string>
+    <string name="toggleWifiAp">Portable Wi-Fi hotspot</string>
+    <string name="toggleBluetooth">Bluetooth</string>
+    <string name="toggleGPS">GPS</string>
+    <string name="toggleData">Mobile Data</string>
+    <string name="toggleSync">Data Sync</string>
+    <string name="toggle2g3g">2G/3G</string>
+    <string name="toggleSound">Ring Mode</string>
+    <string name="toggleBrightness">Brightness</string>
+    <string name="toggleAutoRotate">Orientation</string>
+    <string name="toggleScreenTimeout">Screen Timeout</string>
+    <string name="toggleAirplane">Airplane</string>
+    <string name="toggleFlashlight">Flashlight</string>
+    <string name="toggleLockScreen">Lock Screen</string>
+    <string name="toggleWimax">WiMAX</string>
+
+    <string name="toggleWifiDescription">Enable/disable Wi-Fi</string>
+    <string name="toggleWifiApDescription">Enable/disable the portable Wi-Fi hotspot</string>
+    <string name="toggleBluetoothDescription">Enable/disable Bluetooth</string>
+    <string name="toggleGPSDescription">Enable/disable GPS</string>
+    <string name="toggleDataDescription">Enable/disable mobile data</string>
+    <string name="toggleSyncDescription">Enable/disable data sync</string>
+    <string name="toggle2g3gDescription">Switch between 2G and 3G</string>
+    <string name="toggleSoundDescription">Switch between ring and vibrate only</string>
+    <string name="toggleBrightnessDescription">Switch between brightness levels</string>
+    <string name="toggleAutoRotateDescription">Enable/disable orientation sensor</string>
+    <string name="toggleScreenTimeoutDescription">Set different screen timeouts</string>
+    <string name="toggleAirplaneDescription">Enable/disable airplane mode</string>
+    <string name="toggleFlashlightDescription">Enable/disable flashlight mode</string>
+    <string name="toggleLockScreenDescription">Enable/disable lock screen</string>
+    <string name="toggleWimaxDescription">Enable/disable WiMAX</string>
 
 	<!-- probably not used --> 
     <!-- Main Settings screen setting option name to go into the profile settings screen -->
@@ -472,11 +696,6 @@
     <string name="profile_reset_all_title">Reset all</string>
     <!-- Dialog confirming reset all - message -->
     <string name="profile_reset_all_message">Do you want to delete all user created profiles and application groups and restore them to default?</string>
-
-    <string name="toggleGPS">GPS</string>
-    <string name="toggleWifi">Wi-Fi</string>
-    <string name="toggleBluetooth">Bluetooth</string>
-    <string name="toggleWifiAp">Wi-Fi Hotspot</string>
 
     <!-- Bluetooth phone book permission Alert Activity text [CHAR LIMIT=none] -->
     <string name="bluetooth_pb_acceptance_dialog_text">%1$s would like to access your contacts and call history. Give access to %2$s?</string>
@@ -1626,6 +1845,9 @@
     <string name="wifi_state_enabled" translatable="false">Enabled</string>
     <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary -->
     <string name="wifi_state_unknown" translatable="false">Unknown</string>
+    <!-- Button label for generic cancel action -->
+    <string name="cancel">Cancel</string>
+    <string name="ok">Ok</string>
 
     <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary
          Menu item on Wifi information screen-->
