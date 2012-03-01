@@ -16,20 +16,19 @@
 
 package com.android.settings.profiles;
 
-import com.android.settings.R;
-
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.preference.Preference;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.RelativeLayout;
+import android.widget.LinearLayout;
+
+import com.android.settings.R;
 
 public class ProfileConnectionPreference extends Preference implements
         CompoundButton.OnCheckedChangeListener, View.OnClickListener {
@@ -43,6 +42,7 @@ public class ProfileConnectionPreference extends Preference implements
     private ProfileConfig.ConnectionItem mConnectionItem;
 
     final static int defaultChoice = -1;
+
     private int currentChoice;
 
     /**
@@ -87,7 +87,7 @@ public class ProfileConnectionPreference extends Preference implements
         }
 
         View textLayout = view.findViewById(R.id.text_layout);
-        if ((textLayout != null) && textLayout instanceof RelativeLayout) {
+        if ((textLayout != null) && textLayout instanceof LinearLayout) {
             textLayout.setOnClickListener(this);
         }
 
@@ -111,7 +111,6 @@ public class ProfileConnectionPreference extends Preference implements
     }
 
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        Log.d(TAG, "ID: " + getKey() + " :" + isChecked);
         if (mProtectFromCheckedChange) {
             return;
         }
@@ -139,10 +138,14 @@ public class ProfileConnectionPreference extends Preference implements
             @Override
             public void onClick(DialogInterface dialog, int item) {
                 if (currentChoice != defaultChoice) {
-                    mConnectionItem.mSettings.setValue(Integer.parseInt(ConnectionValues[currentChoice]));
+                    int value = Integer.parseInt(ConnectionValues[currentChoice]);
+                    mConnectionItem.mSettings.setValue(value);
+                    setSummary(value == 1 ? getContext().getString(R.string.connection_state_enabled) 
+                            : getContext().getString(R.string.connection_state_disabled));
                 }
             }
         });
+
         builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int item) {

@@ -19,8 +19,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:minHeight="?android:attr/listPreferredItemHeight"
-    android:paddingRight="?android:attr/scrollbarSize"
-    android:paddingLeft="@*android:dimen/preference_item_padding_side"
     android:gravity="center_vertical">
 
     <LinearLayout
@@ -31,6 +29,8 @@
         android:gravity="center_vertical"
         android:clickable="true"
         android:focusable="true"
+        android:paddingLeft="@*android:dimen/preference_item_padding_side"
+        android:paddingRight="?android:attr/scrollbarSize"
         android:background="?android:attr/selectableItemBackground">
 
         <RelativeLayout

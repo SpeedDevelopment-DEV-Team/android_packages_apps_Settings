@@ -16,8 +16,6 @@
 
 package com.android.settings.profiles;
 
-import com.android.settings.R;
-
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
@@ -25,13 +23,14 @@ import android.content.DialogInterface;
 import android.media.AudioManager;
 import android.preference.Preference;
 import android.util.AttributeSet;
-import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
-import android.widget.RelativeLayout;
+import android.widget.LinearLayout;
 import android.widget.SeekBar;
+
+import com.android.settings.R;
 
 public class StreamVolumePreference extends Preference implements
         CompoundButton.OnCheckedChangeListener, View.OnClickListener {
@@ -88,7 +87,7 @@ public class StreamVolumePreference extends Preference implements
         }
 
         View textLayout = view.findViewById(R.id.text_layout);
-        if ((textLayout != null) && textLayout instanceof RelativeLayout) {
+        if ((textLayout != null) && textLayout instanceof LinearLayout) {
             textLayout.setOnClickListener(this);
         }
 
@@ -112,7 +111,6 @@ public class StreamVolumePreference extends Preference implements
     }
 
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-        Log.i(TAG, "ID: " + getKey() + " :" + isChecked);
         if (mProtectFromCheckedChange) {
             return;
         }
@@ -134,7 +132,9 @@ public class StreamVolumePreference extends Preference implements
         builder.setPositiveButton(android.R.string.ok, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
-                mStreamItem.mSettings.setValue(mBar.getProgress());
+                int value = mBar.getProgress();
+                mStreamItem.mSettings.setValue(value);
+                setSummary(getContext().getString(R.string.volume_override_summary) + " " + value + "/" + mBar.getMax());
             }
         });
         builder.setNegativeButton(android.R.string.cancel, new DialogInterface.OnClickListener() {

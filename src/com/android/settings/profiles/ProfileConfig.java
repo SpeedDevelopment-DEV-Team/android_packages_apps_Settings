@@ -24,6 +24,7 @@ import android.app.Profile;
 import android.app.ProfileGroup;
 import android.app.ProfileManager;
 import android.app.StreamSettings;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.media.AudioManager;
 import android.os.Bundle;
@@ -147,6 +148,7 @@ public class ProfileConfig extends SettingsPreferenceFragment
         }
 
         // Populate the audio streams list
+        final AudioManager am = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
         PreferenceGroup streamList = (PreferenceGroup) prefSet.findPreference("profile_volumeoverrides");
         if (streamList != null) {
             streamList.removeAll();
@@ -160,7 +162,8 @@ public class ProfileConfig extends SettingsPreferenceFragment
                 StreamVolumePreference pref = new StreamVolumePreference(getActivity());
                 pref.setKey("stream_" + stream.mStreamId);
                 pref.setTitle(stream.mLabel);
-                //pref.setSummary(getString(R.string.profile_volumeoverrides_summary));  // summary is repetitive, consider removing
+                pref.setSummary(getString(R.string.volume_override_summary) + " " + settings.getValue() 
+                        + "/" + am.getStreamMaxVolume(stream.mStreamId)); 
                 pref.setPersistent(false);
                 pref.setStreamItem(stream);
                 stream.mCheckbox = pref;
@@ -182,7 +185,8 @@ public class ProfileConfig extends SettingsPreferenceFragment
                 ProfileConnectionPreference pref = new ProfileConnectionPreference(getActivity());
                 pref.setKey("connection_" + connection.mConnectionId);
                 pref.setTitle(connection.mLabel);
-                //pref.setSummary(getString(R.string.profile_connectionoverrides_summary));  // summary is repetitive, consider removing
+                pref.setSummary(settings.getValue() == 1 ? getString(R.string.connection_state_enabled) 
+                        : getString(R.string.connection_state_disabled));
                 pref.setPersistent(false);
                 pref.setConnectionItem(connection);
                 connection.mCheckbox = pref;
@@ -223,7 +227,6 @@ public class ProfileConfig extends SettingsPreferenceFragment
             }
         } else if (preference == mNamePreference) {
             String name = mNamePreference.getName().toString();
-            // Check if duplicate name and reset if yes
             if (!mProfileManager.profileExists(name)) {
                 mProfile.setName(name);
             } else {
@@ -236,6 +239,7 @@ public class ProfileConfig extends SettingsPreferenceFragment
 
     @Override
     public boolean onPreferenceTreeClick(PreferenceScreen preferenceScreen, Preference preference) {
+        Log.d(TAG, "onPreferenceTreeClick(): entered" + preferenceScreen.getKey() + preference.getKey());
         if (preference instanceof PreferenceScreen) {
             startProfileGroupActivity(preference.getKey(), preference.getTitle().toString());
             return true;
@@ -256,7 +260,6 @@ public class ProfileConfig extends SettingsPreferenceFragment
 
     
     private void deleteProfile() {
-        Log.d(TAG, "deleteProfile(): entered");
         if (mProfile.getUuid().equals(mProfileManager.getActiveProfile().getUuid())) {
             Toast toast = Toast.makeText(getActivity(), getString(R.string.profile_cannot_delete),
                     Toast.LENGTH_SHORT);

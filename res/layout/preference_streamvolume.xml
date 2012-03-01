@@ -17,42 +17,47 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:minHeight="?android:attr/listPreferredItemHeight"
-    android:gravity="center_vertical"
-    android:paddingLeft="@*android:dimen/preference_item_padding_side" >
+    android:gravity="center_vertical" >
 
-    <RelativeLayout
-        android:id="@+android:id/text_layout"
+    <LinearLayout
+        android:id="@+id/text_layout"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
         android:layout_weight="1"
         android:gravity="center_vertical"
-        android:paddingTop="6dip"
-        android:paddingBottom="6dip"
-        android:paddingLeft="@*android:dimen/preference_icon_minWidth"
-        android:paddingRight="@*android:dimen/preference_item_padding_inner"
         android:clickable="true"
         android:focusable="true"
-        android:background="?android:attr/selectableItemBackground" >
+        android:paddingLeft="@*android:dimen/preference_item_padding_side"
+        android:paddingRight="@*android:dimen/preference_item_padding_inner"
+        android:background="?android:attr/selectableItemBackground">
 
-        <TextView android:id="@+android:id/title"
+        <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:singleLine="true"
-            android:textAppearance="?android:attr/textAppearanceMedium"
-            android:ellipsize="marquee"
-            android:fadingEdge="horizontal" />
+            android:layout_height="match_parent"
+            android:paddingTop="6dip"
+            android:paddingBottom="6dip"
+            android:paddingLeft="@*android:dimen/preference_icon_minWidth" >
 
-        <TextView android:id="@+android:id/summary"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@android:id/title"
-            android:layout_alignLeft="@android:id/title"
-            android:textAppearance="?android:attr/textAppearanceSmall"
-            android:textColor="?android:attr/textColorSecondary"
-            android:maxLines="2" />
+            <TextView android:id="@+android:id/title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:ellipsize="marquee"
+                android:fadingEdge="horizontal" />
 
-    </RelativeLayout>
+            <TextView android:id="@+android:id/summary"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@android:id/title"
+                android:layout_alignLeft="@android:id/title"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:textColor="?android:attr/textColorSecondary"
+                android:maxLines="2" />
 
+        </RelativeLayout>
+
+    </LinearLayout>
 
     <View
         android:layout_width="2dip"
