@@ -448,8 +448,10 @@
     <!-- Dialog confirming reset all - message -->
     <string name="profile_reset_all_message">Do you want to delete all user created profiles and application groups and restore them to default?</string>
 
-    <!-- Title of the preferences category for preference items to control encryption -->
-    <string name="crypt_keeper_settings_title">Encryption</string>
+    <string name="toggleGPS">GPS</string>
+    <string name="toggleWifi">Wi-Fi</string>
+    <string name="toggleBluetooth">Bluetooth</string>
+    <string name="toggleWifiAp">Wi-Fi Hotspot</string>
 
     <!-- Bluetooth phone book permission Alert Activity text [CHAR LIMIT=none] -->
     <string name="bluetooth_pb_acceptance_dialog_text">%1$s would like to access your contacts and call history. Give access to %2$s?</string>
