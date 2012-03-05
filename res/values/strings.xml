@@ -425,11 +425,6 @@
     <string name="expanded_haptic_feedback_title">Haptic feedback</string>
     <string name="expanded_haptic_feedback_summary">Enable/disable haptic feedback</string>
 
-    <!-- Wallpaper settings title [CHAR LIMIT=30] -->
-    <string name="wallpaper_settings_title">Wallpaper</string>
-    <!-- Wallpaper settings fragment title [CHAR LIMIT=30] -->
-    <string name="wallpaper_settings_fragment_title">Choose wallpaper from</string>
-
     <!-- Profiles settings -->
     <string name="profiles_add">Add</string>
     <string name="profile_menu_delete">Delete</string>
@@ -755,9 +750,6 @@
     <!-- ======================================================================================= -->
     <!-- NEW STUFF -->
     <!-- ======================================================================================= -->
-
-    <!-- Button label for generic cancel action -->
-    <string name="cancel">Cancel</string>
 
     <!-- Title of the Settings activity shown within the application itself. -->
     <string name="settings_label">Settings</string>
