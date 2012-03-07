@@ -1388,10 +1388,18 @@
                 android:resource="@id/wireless_settings" />
         </activity>
 
-        <activity android:name="com.liquid.control.LiquidActivity" android:label="@string/liquid_control_title">
+        <activity android:name="com.liquid.control.LiquidActivity"
+            android:label="@string/liquid_control_title">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+	    <activity android:name="Settings$BacklightSettingsActivity"
+            android:label="@string/backlight_settings">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
             </intent-filter>
         </activity>
 
