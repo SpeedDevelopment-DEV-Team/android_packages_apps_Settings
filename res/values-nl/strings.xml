@@ -1693,7 +1693,6 @@
     <string name="toggleAirplane">Vliegtuigmodus</string>
     <string name="toggleFlashlight">Zaklamp</string>
     <string name="toggleLockScreen">Vergrendelscherm</string>
-<<<<<<< HEAD
 
     <string name="toggleWifiDescription">Schakel Wi-Fi in/uit</string>
     <string name="toggleWifiApDescription">Schakel de draagbare Wi-Fi-hospot in/uit</string>
@@ -1710,6 +1709,5 @@
     <string name="toggleFlashlightDescription">Schakel zaklmap in/uit</string>
     <string name="toggleLockScreenDescription">Schakel vergrendelscherm in/uit</string>
     <string name="toggleWimaxDescription">Schakel WiMAX in/uit</string>
-=======
->>>>>>> 6a71c63... Profiles - Part 1 of 2
+
 </resources>
