@@ -1103,6 +1103,35 @@
     <!-- Bluetooth PIN hint text (below the text entry box). [CHAR LIMIT=30] -->
     <string name="bluetooth_pin_values_hint">Usually 0000 or 1234</string>
 
+    <!-- About device screen, model of device. -->
+    <string name="model_number">Model number</string>
+    <!-- About device screen, Cpu info. -->
+    <string name="cpu_info">CPU</string>
+    <!-- About phone screen, Free memory info -->
+    <string name="mem_info">Memory</string>
+    <!-- About phone screen, status item label -->
+    <string name="firmware_version">Android version</string>
+    <!-- About device screen, verison of radio. -->
+    <string name="baseband_version">Baseband version</string>
+    <!-- About device screen, version of kernel. -->
+    <string name="kernel_version">Kernel version</string>
+    <!-- About device screen, version of modification of Android. -->
+    <string name="mod_version">Mod version</string>
+    <string name="mod_version_default">Unknown</string>
+    <!-- About device screen, build number. -->
+    <string name="build_number">Build number</string>
+    <!-- About device screen, build date of ROM. -->
+    <string name="build_date">Build date</string>
+    <string name="build_date_default">2012-01-01-0000</string>
+    <!-- About device screen, show when a value of some status item is unavailable. -->
+    <string name="device_info_not_available">Not available</string>
+    
+    <!-- Phone info -->
+    <!-- Phone Info screen. Button label to turn on the radio. Only shown in diagnostic screen, so precise translation is not needed. -->
+    <string name="turn_on_radio">Turn on radio</string>
+    <!-- Phone Info screen. Button label to turn off the radio. Only shown in diagnostic screen, so precise translation is not needed. -->
+    <string name="turn_off_radio">Turn off radio</string>
+
     <!-- Pairing dialog text to remind user to enter the PIN on the other device. [CHAR LIMIT=NONE] -->
     <string name="bluetooth_enter_pin_other_device">You may also need to enter this PIN on the other device.</string>
     <!-- Pairing dialog text to remind user to enter the passkey on the other device. [CHAR LIMIT=NONE] -->
