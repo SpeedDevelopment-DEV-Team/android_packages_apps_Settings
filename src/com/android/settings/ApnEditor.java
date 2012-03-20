@@ -16,7 +16,6 @@
 
 package com.android.settings;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.ContentUris;
@@ -28,22 +27,24 @@ import android.database.Cursor;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.SystemProperties;
-import android.preference.CheckBoxPreference;
 import android.preference.EditTextPreference;
 import android.preference.ListPreference;
+import android.preference.CheckBoxPreference;
 import android.preference.Preference;
+import android.preference.PreferenceActivity;
 import android.provider.Telephony;
 import android.telephony.TelephonyManager;
 import android.util.Log;
+import android.view.KeyEvent;
 import android.view.Menu;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 
 import com.android.internal.telephony.Phone;
+import com.android.internal.telephony.RILConstants;
 import com.android.internal.telephony.TelephonyProperties;
 
 
-public class ApnEditor extends SettingsPreferenceFragment
+public class ApnEditor extends PreferenceActivity
         implements SharedPreferences.OnSharedPreferenceChangeListener,
                     Preference.OnPreferenceChangeListener {
 
@@ -138,7 +139,7 @@ public class ApnEditor extends SettingsPreferenceFragment
 
 
     @Override
-    public void onCreate(Bundle icicle) {
+    protected void onCreate(Bundle icicle) {
         super.onCreate(icicle);
 
         addPreferencesFromResource(R.xml.apn_editor);
@@ -168,7 +169,7 @@ public class ApnEditor extends SettingsPreferenceFragment
         // Only enable this on CDMA phones for now, since it may cause problems on other phone
         // types.  (This screen is not normally accessible on CDMA phones, but is useful for
         // testing.)
-        TelephonyManager tm = (TelephonyManager)getSystemService(Activity.TELEPHONY_SERVICE);
+        TelephonyManager tm = (TelephonyManager)getSystemService(TELEPHONY_SERVICE);
         if (tm.getCurrentPhoneType() == Phone.PHONE_TYPE_CDMA) {
             mRoamingProtocol.setOnPreferenceChangeListener(this);
         } else {
@@ -182,7 +183,7 @@ public class ApnEditor extends SettingsPreferenceFragment
 
         mRes = getResources();
 
-        final Intent intent = getActivity().getIntent();
+        final Intent intent = getIntent();
         final String action = intent.getAction();
 
         mFirstTime = icicle == null;
@@ -202,25 +203,24 @@ public class ApnEditor extends SettingsPreferenceFragment
             // original activity if they requested a result.
             if (mUri == null) {
                 Log.w(TAG, "Failed to insert new telephony provider into "
-                        + getActivity().getIntent().getData());
+                        + getIntent().getData());
                 finish();
                 return;
             }
 
             // The new entry was created, so assume all will end well and
             // set the result to be returned.
-            getActivity().setResult(Activity.RESULT_OK, (new Intent()).setAction(mUri.toString()));
+            setResult(RESULT_OK, (new Intent()).setAction(mUri.toString()));
 
         } else {
             finish();
             return;
         }
 
-        mCursor = getActivity().managedQuery(mUri, sProjection, null, null);
+        mCursor = managedQuery(mUri, sProjection, null, null);
         mCursor.moveToFirst();
 
         fillUi();
-        setHasOptionsMenu(true);
     }
 
     @Override
@@ -388,8 +388,8 @@ public class ApnEditor extends SettingsPreferenceFragment
     }
 
     @Override
-    public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        super.onCreateOptionsMenu(menu, inflater);
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
         // If it's a new APN, then cancel will delete the new entry in onPause
         if (!mNewApn) {
             menu.add(0, MENU_DELETE, 0, R.string.menu_delete)
@@ -399,6 +399,7 @@ public class ApnEditor extends SettingsPreferenceFragment
             .setIcon(android.R.drawable.ic_menu_save);
         menu.add(0, MENU_CANCEL, 0, R.string.menu_cancel)
             .setIcon(android.R.drawable.ic_menu_close_clear_cancel);
+        return true;
     }
 
     @Override
@@ -423,7 +424,20 @@ public class ApnEditor extends SettingsPreferenceFragment
     }
 
     @Override
-    public void onSaveInstanceState(Bundle icicle) {
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        switch (keyCode) {
+            case KeyEvent.KEYCODE_BACK: {
+                if (validateAndSave(false)) {
+                    finish();
+                }
+                return true;
+            }
+        }
+        return super.onKeyDown(keyCode, event);
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle icicle) {
         super.onSaveInstanceState(icicle);
         if (validateAndSave(true)) {
             icicle.putInt(SAVED_POS, mCursor.getInt(ID_INDEX));
@@ -528,12 +542,12 @@ public class ApnEditor extends SettingsPreferenceFragment
     }
 
     @Override
-    public Dialog onCreateDialog(int id) {
+    protected Dialog onCreateDialog(int id) {
 
         if (id == ERROR_DIALOG_ID) {
             String msg = getErrorMsg();
 
-            return new AlertDialog.Builder(getActivity())
+            return new AlertDialog.Builder(this)
                     .setTitle(R.string.error_title)
                     .setPositiveButton(android.R.string.ok, null)
                     .setMessage(msg)
@@ -541,6 +555,19 @@ public class ApnEditor extends SettingsPreferenceFragment
         }
 
         return super.onCreateDialog(id);
+    }
+
+    @Override
+    protected void onPrepareDialog(int id, Dialog dialog) {
+        super.onPrepareDialog(id, dialog);
+
+        if (id == ERROR_DIALOG_ID) {
+            String msg = getErrorMsg();
+
+            if (msg != null) {
+                ((AlertDialog)dialog).setMessage(msg);
+            }
+        }
     }
 
     private void deleteApn() {
