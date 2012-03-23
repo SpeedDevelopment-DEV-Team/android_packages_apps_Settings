@@ -657,6 +657,7 @@
     <string name="automatic_brightness" msgid="5014143533884135461">"Ajuster automatiquement la luminosité"</string>
     <string name="title_font_size" msgid="4405544325522105222">"Taille de la police"</string>
     <string name="dialog_title_font_size" msgid="2231507851258955038">"Taille de police"</string>
+
     <string name="sim_lock_settings" msgid="3392331196873564292">"Paramètres verrouillage SIM"</string>
     <string name="sim_lock_settings_category" msgid="5136244267576697004">"Configurer verrouillage carte SIM"</string>
     <string name="sim_lock_settings_title" msgid="9018585580955414596">"Verrouillage de la SIM"</string>

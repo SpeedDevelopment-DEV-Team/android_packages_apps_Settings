@@ -657,6 +657,8 @@
     <string name="automatic_brightness" msgid="5014143533884135461">"Αυτόματη φωτεινότητα"</string>
     <string name="title_font_size" msgid="4405544325522105222">"Μέγεθος γραμματοσειράς"</string>
     <string name="dialog_title_font_size" msgid="2231507851258955038">"Μέγεθος γραμματοσειρ."</string>
+    <string name="battery_pulse_title">Φωτ. παλμός LED χαμηλής μπαταρίας</string>
+
     <string name="sim_lock_settings" msgid="3392331196873564292">"Ρυθμίσεις κλειδώματος κάρτας SIM"</string>
     <string name="sim_lock_settings_category" msgid="5136244267576697004">"Ορισμός κλειδώματος κάρτας SIM"</string>
     <string name="sim_lock_settings_title" msgid="9018585580955414596">"Κλείδωμα κάρτας SIM"</string>
