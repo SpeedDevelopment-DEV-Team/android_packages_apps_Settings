@@ -367,9 +367,6 @@
     <string name="android_beam_label">Android Beam</string>
     <!-- Explanation of the Android Beam feature in the Android Beam settings panel. The use of "beam" here is as a verb and not considered trademarked. [CHAR LIMIT=NONE] -->
     <string name="android_beam_explained">When this feature is turned on, you can beam app content to another NFC-capable device by holding the devices close together. For example, you can beam Browser pages, YouTube videos, People contacts, and more.\n\nJust bring the devices together (typically back to back) and then touch your screen. The app determines what gets beamed.</string>
-<!-- DEVICE Settings -->
-    <!-- Settings main menu category heading. Device (Sound, display, battery, applications...). [CHAR LIMIT=40] -->
-    <string name="header_category_device">DEVICE</string>
 
     <!-- Sound and alerts settings --> <skip/>
     <!-- Main Settings screen setting option name to go into the display settings screen -->
@@ -441,7 +438,6 @@
     <string name="link_volume_ringtones">Link volumes</string>
     <string name="link_volume_ringtones_toast">Make sure to change your volume to re-set your notification volume to match your ringtone volume.</string>
     <string name="link_volume_mutes">Link mute states</string>
->>>>>>> 10dc259... Make the volume overlay more functional 2/2
 
     <!-- Quiet hours -->
     <string name="quiet_hours_title">Quiet hours</string>
