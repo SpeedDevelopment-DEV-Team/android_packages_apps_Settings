@@ -403,6 +403,8 @@
     <!-- Volume description for alarm volume -->
     <string name="volume_alarm_description">Alarms</string>
     <string name="link_volume_ringtones">Link volumes</string>
+    <!-- Volume description for linking ringtone and notification mute states -->
+    <string name="link_volume_mutes">Link mute states</string>
     <string name="link_volume_ringtones_toast">Make sure to change your volume to re-set your notification volume to match your ringtone volume.</string>
 
     <!-- Quiet hours -->
