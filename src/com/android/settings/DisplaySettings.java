@@ -18,21 +18,28 @@ package com.android.settings;
 
 import static android.provider.Settings.System.SCREEN_OFF_TIMEOUT;
 
+import android.app.ActivityManagerNative;
 import java.util.ArrayList;
 
 import android.app.admin.DevicePolicyManager;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.database.ContentObserver;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.RemoteException;
+import android.os.ServiceManager;
 import android.preference.CheckBoxPreference;
 import android.preference.ListPreference;
 import android.preference.Preference;
 import android.preference.PreferenceScreen;
 import android.provider.Settings;
+import android.provider.Settings.SettingNotFoundException;
 import android.util.Log;
+import android.view.IWindowManager;
+import android.view.Surface;
 
 public class DisplaySettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
@@ -287,6 +294,7 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         if (KEY_FONT_SIZE.equals(key)) {
             writeFontSizePreference(objValue);
         }
+
         return true;
     }
 }

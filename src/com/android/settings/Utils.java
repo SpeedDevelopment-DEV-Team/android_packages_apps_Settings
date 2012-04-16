@@ -386,7 +386,6 @@ public class Utils {
         } else {
             statusString = res.getString(R.string.battery_info_status_unknown);
         }
-
         return statusString;
     }
 
@@ -440,5 +439,50 @@ public class Utils {
         } else {
             return R.string.tether_settings_title_bluetooth;
         }
+    }
+
+    public static boolean fileExists(String filename) {
+        return new File(filename).exists();
+    }
+
+    public static String fileReadOneLine(String fname) {
+        BufferedReader br;
+        String line = null;
+
+        try {
+            br = new BufferedReader(new FileReader(fname), 512);
+            try {
+                line = br.readLine();
+            } finally {
+                br.close();
+            }
+        } catch (Exception e) {
+            Log.e(TAG, "IO Exception when reading /sys/ file", e);
+        }
+        return line;
+    }
+
+    public static boolean fileWriteOneLine(String fname, String value) {
+        try {
+            FileWriter fw = new FileWriter(fname);
+            try {
+                fw.write(value);
+            } finally {
+                fw.close();
+            }
+        } catch (IOException e) {
+            String Error = "Error writing to " + fname + ". Exception: ";
+            Log.e(TAG, Error, e);
+            return false;
+        }
+        return true;
+    }
+
+    public static boolean isScreenLarge() {
+        final int screenSize = Resources.getSystem().getConfiguration().screenLayout &
+                Configuration.SCREENLAYOUT_SIZE_MASK;
+        boolean isScreenLarge = screenSize == Configuration.SCREENLAYOUT_SIZE_LARGE ||
+            screenSize == Configuration.SCREENLAYOUT_SIZE_XLARGE;
+        return isScreenLarge;
     }
 }

@@ -51,9 +51,9 @@ public class Memory extends SettingsPreferenceFragment {
 
     private static final int DLG_CONFIRM_UNMOUNT = 1;
     private static final int DLG_ERROR_UNMOUNT = 2;
-
     private static final int MENU_ID_USB = Menu.FIRST;
-
+    /* Since this is hidden when useless, it should be the last */
+    private static final int MENU_ID_STORAGE = Menu.FIRST +1;
     private Resources mResources;
 
     // The mountToggle Preference that has last been clicked.
@@ -64,11 +64,13 @@ public class Memory extends SettingsPreferenceFragment {
 
     // Access using getMountService()
     private IMountService mMountService = null;
-
     private StorageManager mStorageManager = null;
 
     private StorageVolumePreferenceCategory mInternalStorageVolumePreferenceCategory;
     private StorageVolumePreferenceCategory[] mStorageVolumePreferenceCategories;
+
+    private boolean mMassStorageEnabled = false;
+    private final boolean mHasSwitchableStorage = !SystemProperties.get("ro.vold.switchablepair","").isEmpty();
 
     @Override
     public void onCreate(Bundle icicle) {
