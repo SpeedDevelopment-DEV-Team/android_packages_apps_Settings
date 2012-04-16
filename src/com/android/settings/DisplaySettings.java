@@ -323,11 +323,12 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                     value ? 1 : 0);
             return true;
         } else if (preference == mBatteryPulse) {
-        if (preference == mBatteryPulse) {
-            boolean value = mBatteryPulse.isChecked();
-            Settings.System.putInt(getContentResolver(), Settings.System.BATTERY_LIGHT_PULSE,
-                    value ? 1 : 0);
-            return true;
+            if (preference == mBatteryPulse) {
+                boolean value = mBatteryPulse.isChecked();
+                Settings.System.putInt(getContentResolver(), Settings.System.BATTERY_LIGHT_PULSE,
+                        value ? 1 : 0);
+                return true;
+            }
         }
         return super.onPreferenceTreeClick(preferenceScreen, preference);
     }
@@ -346,7 +347,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
         if (KEY_FONT_SIZE.equals(key)) {
             writeFontSizePreference(objValue);
         }
-
         return true;
     }
 }
