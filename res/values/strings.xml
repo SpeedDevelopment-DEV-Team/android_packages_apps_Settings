@@ -439,7 +439,9 @@
     <string name="end_time_title">End</string>
 
     <!-- Backlight #CM -->
-    <string name="backlight_title">Automatic backlight</string>
+    <string name="backlight_title">Customize backlight</string>
+    <string name="backlight_settings">Automatic backlight</string>
+    <string name="backlight_settings_title">Automatic backlight</string>
     <string name="backlight_summary">Tweak levels and filtering</string>
     <string name="light_filter_title">Light sensor filter</string>
     <string name="light_filter_enabled_title">Enabled</string>
