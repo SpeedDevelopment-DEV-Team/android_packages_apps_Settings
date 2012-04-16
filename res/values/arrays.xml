@@ -724,46 +724,6 @@
         <item>Unsuccessful</item>
     </string-array> 
 
-    <string-array name="root_access_entries"> 
-        <item>@string/root_access_none</item> 
-        <item>@string/root_access_apps</item> 
-        <item>@string/root_access_adb</item> 
-        <item>@string/root_access_all</item> 
-    </string-array> 
- 
-    <string-array name="root_access_values"> 
-        <item>0</item> 
-        <item>1</item> 
-        <item>2</item> 
-        <item>3</item> 
-    </string-array> 
-
-    <!-- Profile mode options. -->
-    <string-array name="profile_entries">
-        <item>On</item>
-        <item>Off</item>
-        <item>No Override</item>
-    </string-array>
-
-    <!-- Values for vibrate_entries matching constants in SoundSettings. Do not translate. -->
-    <string-array name="profile_values" translatable="false">
-        <item>OVERRIDE</item>
-        <item>SUPPRESS</item>
-        <item>DEFAULT</item>
-    </string-array>
-
-    <!-- Profile mode options. -->
-    <string-array name="profile_connection_entries">
-        <item>Disable</item>
-        <item>Enable</item>
-    </string-array>
-
-    <!-- Values for profile connections. Do not translate. -->
-    <string-array name="profile_connection_values" translatable="false">
-        <item>0</item>
-        <item>1</item>
-    </string-array>
-
     <!-- Arrays requred by Automatic Backlight -->
     <string-array name="entries_light_filter_window">
         <item>2 s</item>
@@ -1165,5 +1125,4 @@
         <item>5000</item>
     </string-array>
 
-    <!-- **** CYANOGENMOD EDITS END **** -->
 </resources>

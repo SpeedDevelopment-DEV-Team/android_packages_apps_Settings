@@ -436,57 +436,6 @@
     <string name="start_time_title">Start</string>
     <string name="end_time_title">End</string>
 
-    <!-- Display settings --><skip/>
-    <!-- Sound & display settings screen, section header for settings related to display -->
-    <string name="display_settings">Display</string>
-    <!-- Sound & display settings screen, accelerometer-based rotation check box label -->
-    <string name="accelerometer_title">Auto-rotate screen</string>
-    <!-- Sound & display settings screen, accelerometer-based rotation summary text when check box is selected -->
-    <string name="accelerometer_summary_on" product="tablet">Switch orientation automatically when rotating tablet</string>
-    <!-- Sound & display settings screen, accelerometer-based rotation summary text when check box is selected -->
-    <string name="accelerometer_summary_on" product="default">Switch orientation automatically when rotating phone</string>
-    <!-- Sound & display settings screen, accelerometer-based rotation summary text when check box is clear -->
-    <string name="accelerometer_summary_off" product="tablet">Switch orientation automatically when rotating tablet</string>
-    <!-- Sound & display settings screen, accelerometer-based rotation summary text when check box is clear -->
-    <string name="accelerometer_summary_off" product="default">Switch orientation automatically when rotating phone</string>
-    <!-- Sound & display settings screen, setting option name to change brightness -->
-    <string name="brightness">Brightness</string>
-    <!-- Sound & display settings screen, setting option summary to change brightness -->
-    <string name="brightness_summary">Adjust the brightness of the screen</string>
-    <!-- Sound & display settings screen, setting option name to change screen timeout -->
-    <string name="screen_timeout">Sleep</string>
-    <!-- Sound & display settings screen, setting option summary to change screen timeout -->
-    <string name="screen_timeout_summary">After <xliff:g id="timeout_description">%1$s</xliff:g> of inactivity</string>
-    <!-- Display settings screen, trigger for screen saver options -->
-    <string name="screensaver_settings_title">Screen Candy</string>
-    <!-- Display settings screen, summary for screen saver options, screen saver is turned on -->
-    <string name="screensaver_settings_summary_on">Will start upon sleep if connected to power</string>
-    <!-- Display settings screen, summary for screen saver options, screen saver is turned off -->
-    <string name="screensaver_settings_summary_off">Disabled</string>
-    <!-- Screen saver settings, setting option name to select a module -->
-    <string name="screensaver_component_title">Selected candy</string>
-    <!-- Screen saver settings, setting option name to change activation timeout -->
-    <string name="screensaver_timeout_title">When to activate</string>
-    <!-- Screen saver settings, setting option summary to change activation timeout -->
-    <string name="screensaver_timeout_summary">After <xliff:g id="timeout_description">%1$s</xliff:g> spent idle</string>
-    <!-- Screen saver settings, setting option summary to change activation timeout, shown when disabled -->
-    <string name="screensaver_timeout_zero_summary">Never</string>
-    <!-- Screen saver settings, button allowing the user to test/try the current module -->
-    <string name="screensaver_test">Try it!</string>
-    <!-- Screen saver settings, checkbox allowing the screen saver to activate automatically when
-         the device is docked -->
-    <string name="screensaver_activate_on_dock_title">Also start when docked</string>
-    <!-- Sound & display settings screen, setting option name to change whether the screen adjusts automatically based on lighting conditions -->
-    <string name="automatic_brightness">Automatic brightness</string>
-    <!-- [CHAR LIMIT=30] Sound & display settings screen, setting option name to change font size -->
-    <string name="title_font_size">Font size</string>
-    <!-- Sound & display settings screen, setting option summary displaying the currently selected font size -->
-    <string name="summary_font_size" translatable="false">%1$s</string>
-    <!-- [CHAR LIMIT=40] Sound & display settings screen, title of dialog for picking font size -->
-    <string name="dialog_title_font_size">Font size</string>
-    <!-- Display settings screen, battery light repeat pulsing title -->
-    <string name="battery_pulse_title">Pulse low battery light</string>
-
     <!-- Backlight #CM -->
     <string name="backlight_title">Automatic backlight</string>
     <string name="backlight_summary">Tweak levels and filtering</string>
@@ -671,10 +620,6 @@
     <string name="wallpaper_settings_title">Wallpaper</string>
     <!-- Wallpaper settings fragment title [CHAR LIMIT=30] -->
     <string name="wallpaper_settings_fragment_title">Choose wallpaper from</string>
-
-<!-- PERSONAL Settings -->
-    <!-- Settings main menu category heading. Personal (Accounts, security, language, backup...). [CHAR LIMIT=40] -->
-    <string name="header_category_personal">PERSONAL</string>
 
     <!-- Profiles settings #CM -->
     <string name="profiles_settings_title">Profiles</string>
@@ -1946,25 +1891,6 @@
     <!-- Do not translate. Used for diagnostic screens, precise translation is not necessary
          Label on Wifi Configuration screen-->
     <string name="config_list_label" translatable="false">Configured networks</string>
-
-    <!-- Sound and alerts settings -->
-    <skip/>
-    <!-- Main Settings screen setting option name to go into the display settings screen -->
-    <string name="display_settings_title">Display</string>
-    <!-- Sound settings screen heading -->
-    <string name="sound_settings">Sound</string>
-    <!-- Sound settings screen, setting option volume overlay title -->
-    <string name="volume_overlay_title">Volume panel</string>
-    <!-- Sound settings screen, setting option silent mode title -->
-    <string name="silent_mode_title">Silent mode</string>
-    <!-- Sound settings screen, setting option name to pick ringtone (a list dialog comes up)-->
-    <string name="ringtone_title">Phone ringtone</string>
-    <!-- Sound settings screen, setting option summary text -->
-    <string name="ringtone_summary">""</string>
-    <!-- Sound settings screen, volume title -->
-    <string name="all_volume_title">Volumes</string>
-    <!-- Sound settings screen, music effects title [CHAR LIMIT=30]-->
-    <string name="musicfx_title">Music effects</string>
     <!-- Sound settings screen, setting option name -->
     <string name="ring_volume_title">Ringer volume</string>
     <!-- Sound settings screen, setting option name checkbox -->
