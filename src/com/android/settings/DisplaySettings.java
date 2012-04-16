@@ -34,15 +34,12 @@ import android.preference.PreferenceScreen;
 import android.provider.Settings;
 import android.util.Log;
 
-import com.android.settings.cyanogenmod.DisplayRotation;
-
 public class DisplaySettings extends SettingsPreferenceFragment implements
         Preference.OnPreferenceChangeListener {
-    private static final String TAG = "DisplaySettings";
 
+    private static final String TAG = "DisplaySettings";
     /** If there is no setting in the provider, use this. */
     private static final int FALLBACK_SCREEN_TIMEOUT_VALUE = 30000;
-
     private static final String KEY_SCREEN_TIMEOUT = "screen_timeout";
     private static final String KEY_ACCELEROMETER = "accelerometer";
     private static final String KEY_FONT_SIZE = "font_size";
@@ -52,21 +49,10 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
     private CheckBoxPreference mAccelerometer;
     private ListPreference mFontSizePref;
-    private CheckBoxPreference mNotificationPulse;
-
-    private static final String ROTATION_ANGLE_0 = "0";
-    private static final String ROTATION_ANGLE_90 = "90";
-    private static final String ROTATION_ANGLE_180 = "180";
-    private static final String ROTATION_ANGLE_270 = "270";
-    private static final String ROTATION_ANGLE_DELIM = ", ";
-    private static final String ROTATION_ANGLE_DELIM_FINAL = " & ";
-
     private CheckBoxPreference mVolumeWake;
     private CheckBoxPreference mBatteryPulse;
     private PreferenceScreen mNotificationPulse;
-
     private final Configuration mCurConfig = new Configuration();
-    
     private ListPreference mScreenTimeoutPreference;
 
     private ContentObserver mAccelerometerRotationObserver = new ContentObserver(new Handler()) {
@@ -124,46 +110,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                     Settings.System.VOLUME_WAKE_SCREEN, 0) == 1);
 
         }
-    }
-
-    private void updateDisplayRotationPreferenceDescription() {
-        PreferenceScreen preference = mDisplayRotationPreference;
-        StringBuilder summary = new StringBuilder();
-        Boolean rotationEnabled = Settings.System.getInt(getContentResolver(),
-                Settings.System.ACCELEROMETER_ROTATION, 0) != 0;
-        int mode = Settings.System.getInt(getContentResolver(),
-                Settings.System.ACCELEROMETER_ROTATION_ANGLES,
-                DisplayRotation.ROTATION_0_MODE|DisplayRotation.ROTATION_90_MODE|DisplayRotation.ROTATION_270_MODE);
-
-        if (!rotationEnabled) {
-            summary.append(getString(R.string.display_rotation_disabled));
-        } else {
-            ArrayList<String> rotationList = new ArrayList<String>();
-            String delim = "";
-            summary.append(getString(R.string.display_rotation_enabled) + " ");
-            if ((mode & DisplayRotation.ROTATION_0_MODE) != 0) {
-                rotationList.add(ROTATION_ANGLE_0);
-            }
-            if ((mode & DisplayRotation.ROTATION_90_MODE) != 0) {
-                rotationList.add(ROTATION_ANGLE_90);
-            }
-            if ((mode & DisplayRotation.ROTATION_180_MODE) != 0) {
-                rotationList.add(ROTATION_ANGLE_180);
-            }
-            if ((mode & DisplayRotation.ROTATION_270_MODE) != 0) {
-                rotationList.add(ROTATION_ANGLE_270);
-            }
-            for(int i=0;i<rotationList.size();i++) {
-                summary.append(delim).append(rotationList.get(i));
-                if (rotationList.size() >= 2 && (rotationList.size() - 2) == i) {
-                    delim = " " + ROTATION_ANGLE_DELIM_FINAL + " ";
-                } else {
-                    delim = ROTATION_ANGLE_DELIM + " ";
-                }
-            }
-            summary.append(" " + getString(R.string.display_rotation_unit));
-        }
-        preference.setSummary(summary);
     }
 
     private void updateTimeoutPreferenceDescription(long currentTimeout) {
@@ -267,7 +213,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     @Override
     public void onResume() {
         super.onResume();
-        updateDisplayRotationPreferenceDescription();
         updateLightPulseDescription();
 
         updateState();
@@ -317,11 +262,6 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             } catch (RemoteException exc) {
                 Log.w(TAG, "Unable to save auto-rotate setting");
             }
-        } else if (preference == mNotificationPulse) {
-            boolean value = mNotificationPulse.isChecked();
-            Settings.System.putInt(getContentResolver(), Settings.System.NOTIFICATION_LIGHT_PULSE,
-                    value ? 1 : 0);
-            return true;
         } else if (preference == mBatteryPulse) {
             if (preference == mBatteryPulse) {
                 boolean value = mBatteryPulse.isChecked();
