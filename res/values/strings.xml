@@ -1019,6 +1019,9 @@
     <!-- mobile network settings screen, setting option summary text -->
     <string name="sum_carrier_select">Choose a network operator</string>
 
+    <!-- Acounts & Sync settings screen setting title. This screen will list the different accounts (mail, gmail...) used on that phone and their sync settings -->
+    <string name="sync_settings">Accounts &amp; sync</string>
+
     <!-- Date and time settings --><skip />
     <!-- Main Settings screen setting option name to go into the date and time settings-->
     <string name="date_and_time_settings_title">Date &amp; time</string>
@@ -1574,6 +1577,8 @@
          will set the PAN profile as preferred. -->
     <string name="bluetooth_pan_profile_summary_use_for">Use for Internet access</string>
 
+    <!-- Dock settings title, top level -->
+    <string name="dock_settings">Dock</string>
     <!-- Bluetooth settings.  Dock Setting Title -->
     <string name="bluetooth_dock_settings">Dock Settings</string>
     <!-- Bluetooth settings.  Dock Setting Dialog Title -->
