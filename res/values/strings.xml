@@ -1944,34 +1944,6 @@
          Label on Wifi Configuration screen-->
     <string name="config_list_label" translatable="false">Configured networks</string>
 
-    <!-- Display settings screen, trigger for screen saver options -->
-    <string name="screensaver_settings_title">Screen Candy</string>
-    <!-- Display settings screen, summary for screen saver options, screen saver is turned on -->
-    <string name="screensaver_settings_summary_on">Will start upon sleep if connected to power</string>
-    <!-- Display settings screen, summary for screen saver options, screen saver is turned off -->
-    <string name="screensaver_settings_summary_off">Disabled</string>
-    <!-- Screen saver settings, setting option name to select a module -->
-    <string name="screensaver_component_title">Selected candy</string>
-    <!-- Screen saver settings, setting option name to change activation timeout -->
-    <string name="screensaver_timeout_title">When to activate</string>
-    <!-- Screen saver settings, setting option summary to change activation timeout -->
-    <string name="screensaver_timeout_summary">After <xliff:g id="timeout_description">%1$s</xliff:g> spent idle</string>
-    <!-- Screen saver settings, setting option summary to change activation timeout, shown when disabled -->
-    <string name="screensaver_timeout_zero_summary">Never</string>
-    <!-- Screen saver settings, button allowing the user to test/try the current module -->
-    <string name="screensaver_test">Try it!</string>
-    <!-- Screen saver settings, checkbox allowing the screen saver to activate automatically when
-         the device is docked -->
-    <string name="screensaver_activate_on_dock_title">Also start when docked</string>
-    <!-- Sound & display settings screen, setting option name to change whether the screen adjusts automatically based on lighting conditions -->
-    <string name="automatic_brightness">Automatic brightness</string>
-    <!-- [CHAR LIMIT=30] Sound & display settings screen, setting option name to change font size -->
-    <string name="title_font_size">Font size</string>
-    <!-- Sound & display settings screen, setting option summary displaying the currently selected font size -->
-    <string name="summary_font_size" translatable="false">%1$s</string>
-    <!-- [CHAR LIMIT=40] Sound & display settings screen, title of dialog for picking font size -->
-    <string name="dialog_title_font_size">Font size</string>
-
     <!-- SIM lock settings title -->
     <string name="sim_lock_settings">SIM card lock settings</string>
     <!-- Security & location settings screen, setting option name -->
