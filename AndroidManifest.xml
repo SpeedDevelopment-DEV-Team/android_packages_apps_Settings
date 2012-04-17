@@ -324,7 +324,6 @@
                 android:value="com.android.settings.Settings$WirelessSettingsActivity" />
         </activity>
 
-
         <activity android:name="Settings$VpnSettingsActivity"
                 android:label="@string/vpn_settings_title"
                 android:clearTaskOnLaunch="true">
@@ -887,7 +886,6 @@
 
         <!-- Second and third-level settings -->
 
-
         <!-- Lock screen settings -->
         <activity android:name="ConfirmLockPattern"/>
 
@@ -1046,7 +1044,6 @@
         </activity-alias>
 
         <!-- Bluetooth stuff -->
-
         <activity android:name=".bluetooth.BluetoothPairingDialog"
                   android:label="@string/bluetooth_pairing_request"
                   android:excludeFromRecents="true"
@@ -1161,7 +1158,6 @@
         </activity>
 
         <!-- Development settings -->
-
         <activity android:name="DebugIntentSender" android:label="@string/debug_intent_sender_label">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -1361,15 +1357,6 @@
         <activity android:name=".ApnEditor" />
 
         <activity android:name=".notificationlight.NotificationLightSettings" />
-
-        <activity android:name="Settings$AnonymousStatsActivity"
-                android:label="@string/anonymous_statistics_title"
-                android:configChanges="orientation|keyboardHidden|screenSize"
-                android:clearTaskOnLaunch="true">
-            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
-                android:value="com.android.settings.cmstats.AnonymousStats" />
-        </activity>
-        <!-- CyanogenMod activities End -->
 
         <!-- Pseudo-activity used to provide an intent-filter entry point to encryption settings -->
         <activity android:name="Settings$CryptKeeperSettingsActivity"
