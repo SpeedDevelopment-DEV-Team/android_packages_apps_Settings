@@ -70,7 +70,6 @@ public class Memory extends SettingsPreferenceFragment {
     private StorageVolumePreferenceCategory[] mStorageVolumePreferenceCategories;
 
     private boolean mMassStorageEnabled = false;
-    private final boolean mHasSwitchableStorage = !SystemProperties.get("ro.vold.switchablepair","").isEmpty();
 
     @Override
     public void onCreate(Bundle icicle) {

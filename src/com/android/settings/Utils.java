@@ -23,6 +23,7 @@ import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
 import android.content.pm.PackageManager.NameNotFoundException;
 import android.content.pm.ResolveInfo;
+import android.content.res.Configuration;
 import android.content.res.Resources;
 import android.content.res.Resources.NotFoundException;
 import android.graphics.drawable.Drawable;
@@ -37,17 +38,25 @@ import android.preference.PreferenceFrameLayout;
 import android.preference.PreferenceGroup;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 import android.widget.TabWidget;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.net.InetAddress;
 import java.util.Iterator;
 import java.util.List;
 import java.util.Locale;
 
 public class Utils {
+
+    private static final String TAG = "Utils";
 
     /**
      * Set the preference's title to the matching activity's label.
@@ -386,6 +395,7 @@ public class Utils {
         } else {
             statusString = res.getString(R.string.battery_info_status_unknown);
         }
+
         return statusString;
     }
 
@@ -406,7 +416,7 @@ public class Utils {
             final int paddingBottom = res.getDimensionPixelSize(
                     com.android.internal.R.dimen.preference_fragment_padding_bottom);
 
-            final int effectivePaddingSide = ignoreSidePadding ? 0 : paddingBottom;
+            final int effectivePaddingSide = ignoreSidePadding ? 0 : paddingSide;
             list.setPadding(effectivePaddingSide, 0, effectivePaddingSide, paddingBottom);
         }
     }
@@ -485,4 +495,6 @@ public class Utils {
             screenSize == Configuration.SCREENLAYOUT_SIZE_XLARGE;
         return isScreenLarge;
     }
+
 }
+
