@@ -172,10 +172,10 @@ public class Memory extends SettingsPreferenceFragment {
         menu.add(Menu.NONE, MENU_ID_USB, 0, R.string.storage_menu_usb)
             //.setIcon(com.android.internal.R.drawable.stat_sys_data_usb)
             .setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
-        if (mHasSwitchableStorage) {
+        /* if (mHasSwitchableStorage) {
             menu.add(Menu.NONE, MENU_ID_STORAGE, 0, R.string.storage_menu_storage)
                 .setShowAsAction(MenuItem.SHOW_AS_ACTION_NEVER);
-        }
+        } */
     }
 
     @Override
