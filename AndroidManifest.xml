@@ -1395,7 +1395,7 @@
         </activity>
 
 	    <activity android:name=".LightLevelsActivity"
-            android:label="@string/backlight_settings">
+            android:label="@string/backlight_title">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
             </intent-filter>
