@@ -2188,11 +2188,9 @@
     <!-- SetupWizard strings used by DateTimeSettingsSetupWizard. The button label for going to the next screen. -->
     <string name="next_label">Next</string>
 
-<<<<<<< HEAD
     <!-- LocalePicker -->
     <!-- Title for the locale picker activity -->
     <string name="language_picker_title">Language</string>
-=======
     <!-- Sound and alerts settings -->
     <skip/>
     <!-- Main Settings screen setting option name to go into the display settings screen -->
