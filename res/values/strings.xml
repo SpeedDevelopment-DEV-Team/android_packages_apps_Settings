@@ -2187,13 +2187,10 @@
     <string name="skip_label">Skip</string>
     <!-- SetupWizard strings used by DateTimeSettingsSetupWizard. The button label for going to the next screen. -->
     <string name="next_label">Next</string>
-
     <!-- LocalePicker -->
     <!-- Title for the locale picker activity -->
     <string name="language_picker_title">Language</string>
-<<<<<<< HEAD
-    <!-- Sound and alerts settings -->
-    <skip/>
+    <!-- Sound and alerts settings --> <skip/>
     <!-- Main Settings screen setting option name to go into the display settings screen -->
     <string name="display_settings_title">Display</string>
     <!-- Sound settings screen heading -->
