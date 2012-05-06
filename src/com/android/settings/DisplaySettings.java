@@ -29,6 +29,8 @@ import android.content.res.Resources;
 import android.database.ContentObserver;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.IBinder;
+import android.os.Parcel;
 import android.os.RemoteException;
 import android.os.ServiceManager;
 import android.preference.CheckBoxPreference;
@@ -53,12 +55,15 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
     private static final String KEY_NOTIFICATION_PULSE = "notification_pulse";
     private static final String KEY_BATTERY_PULSE = "battery_pulse";
     private static final String KEY_VOLUME_WAKE = "pref_volume_wake";
+    private static final String KEY_RENDER_EFFECT = "pref_render_effect";
 
     private CheckBoxPreference mAccelerometer;
     private ListPreference mFontSizePref;
     private CheckBoxPreference mVolumeWake;
     private CheckBoxPreference mBatteryPulse;
     private PreferenceScreen mNotificationPulse;
+    private ListPreference mRenderEffect;
+
     private final Configuration mCurConfig = new Configuration();
     private ListPreference mScreenTimeoutPreference;
 
@@ -117,6 +122,11 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
                     Settings.System.VOLUME_WAKE_SCREEN, 0) == 1);
 
         }
+
+        mRenderEffect = (ListPreference) findPreference(KEY_RENDER_EFFECT);
+        mRenderEffect.setOnPreferenceChangeListener(this);
+        updateFlingerOptions();
+
     }
 
     private void updateTimeoutPreferenceDescription(long currentTimeout) {
@@ -290,6 +300,9 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
             } catch (NumberFormatException e) {
                 Log.e(TAG, "could not persist screen timeout setting", e);
             }
+        } else if (KEY_RENDER_EFFECT.equals(key)) {
+            writeRenderEffect(Integer.valueOf((String) objValue));
+            return true;
         }
         if (KEY_FONT_SIZE.equals(key)) {
             writeFontSizePreference(objValue);
@@ -297,4 +310,49 @@ public class DisplaySettings extends SettingsPreferenceFragment implements
 
         return true;
     }
+
+    private void updateFlingerOptions() {
+        // magic communication with surface flinger.
+        try {
+            IBinder flinger = ServiceManager.getService("SurfaceFlinger");
+            if (flinger != null) {
+                Parcel data = Parcel.obtain();
+                Parcel reply = Parcel.obtain();
+                data.writeInterfaceToken("android.ui.ISurfaceComposer");
+                flinger.transact(1010, data, reply, 0);
+                int v;
+                v = reply.readInt();
+                // mShowCpuCB.setChecked(v != 0);
+                v = reply.readInt();
+                // mEnableGLCB.setChecked(v != 0);
+                v = reply.readInt();
+                // mShowUpdatesCB.setChecked(v != 0);
+                v = reply.readInt();
+                // mShowBackgroundCB.setChecked(v != 0);
+
+                v = reply.readInt();
+                mRenderEffect.setValue(String.valueOf(v));
+
+                reply.recycle();
+                data.recycle();
+            }
+        } catch (RemoteException ex) {
+        }
+
+    }
+
+    private void writeRenderEffect(int id) {
+        try {
+            IBinder flinger = ServiceManager.getService("SurfaceFlinger");
+            if (flinger != null) {
+                Parcel data = Parcel.obtain();
+                data.writeInterfaceToken("android.ui.ISurfaceComposer");
+                data.writeInt(id);
+                flinger.transact(1014, data, null, 0);
+                data.recycle();
+            }
+        } catch (RemoteException ex) {
+        }
+    }
+
 }
